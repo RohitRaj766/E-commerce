@@ -6,8 +6,9 @@ const app = express();
 
 
 app.get('/',(req, res)=>{
-    res.send("hello E-commerce")
+    res.send("hello E-commerce lets start")
 });
+
 
 const uri = process.env.MongooseUri;
 mongoose.connect(uri).then(()=>{
