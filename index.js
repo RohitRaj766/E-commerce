@@ -3,10 +3,13 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 const app = express();
-const userRouter = require('./routes/routes.js');
+const userRouter = require('./routes/routes');
+const authRouter = require('./routes/auth');
 
-app.use('/users',userRouter);
+
 app.use(express.json());
+app.use('/api/auth', authRouter);
+app.use('/api/users',userRouter);
 
 const uri = process.env.MongooseUri;
 if (!uri) {
